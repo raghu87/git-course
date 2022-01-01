@@ -83,7 +83,7 @@ git push origin master
 first switch branch
 git branch
 git checkout master
-git branch -d stage
+git branch -d stage   or    git branch -D stage
 git push origin :stage
 ```
 
@@ -132,5 +132,23 @@ NOTE: https://en.wikibooks.org/wiki/Git/Advanced
 NOTE: https://medium.com/@marcosantonocito/fixing-the-gh001-large-files-detected-you-may-want-to-try-git-large-file-storage-43336b983272
 
 
+#### create a orphan branch in a repo
+```
+cd repository
+git checkout --orphan orphan_name
+git rm -rf .
+rm '.gitignore'
+echo "#Title of Readme" > README.md
+git add README.md
+git commit -a -m "Initial Commit"
+git push origin orphan_name
+```
 
+or
+
+```
+cd repository
+git checkout --orphan orphan_name
+git rm --cached .
+```
 
